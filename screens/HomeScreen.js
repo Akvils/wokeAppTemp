@@ -1,0 +1,242 @@
+import React from "react";
+import { ScrollView, SafeAreaView } from "react-native";
+import styled from "styled-components";
+import Card from "../components/Card";
+// import { Icon } from "expo";
+// import { NotificationIcon } from "../components/Icons";
+import Logo from "../components/Logo";
+import Course from "../components/Course";
+import Menu from "../components/Menu";
+
+export default class HomeScreen extends React.Component {
+  render() {
+    return (
+      <Container>
+        <Menu />
+        <SafeAreaView>
+          <ScrollView style={{ height: "100%" }}>
+            <TitleBar>
+              <Avatar source={require("../assets/avatar.jpg")} />
+              <Title>Welcome back,</Title>
+              <Name>Akvil</Name>
+              {/* <NotificationIcon
+                style={{
+                  position: "absolute",
+                  right: 20,
+                  top: 5
+                }}
+              /> */}
+              <WokeIcon source={require("../assets/icon.png")} />
+            </TitleBar>
+            <ScrollView
+              horizontal={true}
+              style={{
+                padding: 20,
+                paddingLeft: 12,
+                paddingTop: 30
+              }}
+              showsHorizontalScrollIndicator={false}
+            >
+              {logos.map((logo, index) => (
+                <Logo key={index} image={logo.image} text={logo.text} />
+              ))}
+            </ScrollView>
+            <Subtitle>Continue Learning</Subtitle>
+            <ScrollView
+              horizontal={true}
+              style={{ paddingBottom: 30 }}
+              showsHorizontalScrollIndicator={false}
+            >
+              {cards.map((card, index) => (
+                <Card
+                  key={index}
+                  title={card.title}
+                  image={card.image}
+                  caption={card.caption}
+                  logo={card.logo}
+                  subtitle={card.subtitle}
+                />
+              ))}
+            </ScrollView>
+            <Subtitle>Popular Series</Subtitle>
+            {cources.map((course, index) => (
+              <Course
+                key={index}
+                title={course.title}
+                image={course.image}
+                subtitle={course.subtitle}
+                logo={course.logo}
+                author={course.author}
+                avatar={course.avatar}
+                caption={course.caption}
+              />
+            ))}
+            {/* {cards.map((card, index) => (
+              <Card
+                key={index}
+                title={card.title}
+                image={card.image}
+                caption={card.caption}
+                logo={card.logo}
+                subtitle={card.subtitle}
+              />
+            ))} */}
+          </ScrollView>
+        </SafeAreaView>
+      </Container>
+    );
+  }
+}
+
+//styled components
+const Subtitle = styled.Text`
+  color: #b8bece;
+  font-weight: 600;
+  font-size: 15px;
+  margin-left: 20px;
+  margin-top: 20px;
+  text-transform: uppercase;
+`;
+
+const Avatar = styled.Image`
+  width: 44px;
+  height: 44px;
+  background: white;
+  border-radius: 22px;
+  margin-left: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+`;
+
+const WokeIcon = styled.Image`
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border-radius: 22px;
+  margin-left: 20px;
+  position: absolute;
+  top: 5;
+  right: 20;
+`;
+
+const Container = styled.View`
+  flex: 1;
+  background-color: #f5f7fa;
+`;
+
+const Title = styled.Text`
+  font-size: 16px;
+  color: #b8bece;
+  font-weight: 500;
+`;
+
+const Name = styled.Text`
+  font-size: 20px;
+  color: #3c4560;
+  font-weight: bold;
+`;
+
+const TitleBar = styled.View`
+  width: 100%;
+  margin-top: 50px;
+  padding-left: 80px;
+`;
+
+//data
+const logos = [
+  {
+    image: require("../assets/logo-framerx.png"),
+    text: "Samadhi Journal "
+  },
+  {
+    image: require("../assets/logo-figma.png"),
+    text: "Autolysis Journal "
+  },
+  {
+    image: require("../assets/logo-figma.png"),
+    text: "Chat "
+  },
+  {
+    image: require("../assets/logo-figma.png"),
+    text: "Self Analysis "
+  },
+  {
+    image: require("../assets/logo-figma.png"),
+    text: "Truth "
+  },
+  {
+    image: require("../assets/logo-figma.png"),
+    text: "Self Esteem "
+  }
+];
+
+const cards = [
+  {
+    title: "Meditation",
+    image: require("../assets/background1.jpg"),
+    subtitle: "Foundation",
+    caption: "4 of 12 sections",
+    logo: require("../assets/logo-meditate.png")
+  },
+  {
+    title: "Maturity",
+    image: require("../assets/background2.jpg"),
+    subtitle: "Foundation",
+    caption: "3 of 12 sections",
+    logo: require("../assets/logo-meditate.png")
+  },
+  {
+    title: "Energy",
+    image: require("../assets/background13.jpg"),
+    subtitle: "Foundation",
+    caption: "2 of 12 sections",
+    logo: require("../assets/logo-meditate.png")
+  },
+  {
+    title: "Love",
+    image: require("../assets/background14.jpg"),
+    subtitle: "Foundation",
+    caption: "1 of 12 sections",
+    logo: require("./assets/logo-meditate.png")
+  }
+];
+
+const cources = [
+  {
+    title: "Vastu",
+    subtitle: "10 sections",
+    image: require("../assets/background11.jpg"),
+    logo: require("../assets/logo-meditate.png"),
+    author: "Akvil Sakha",
+    avatar: require("../assets/avatar.jpg"),
+    caption: "Programming the subconscious by designing the space"
+  },
+  {
+    title: "Rekie",
+    subtitle: "10 sections",
+    image: require("../assets/background12.jpg"),
+    logo: require("../assets/logo-meditate.png"),
+    author: "Akvil Sakha",
+    avatar: require("../assets/avatar.jpg"),
+    caption: "Holistic healing by the divine energy of existence"
+  },
+  {
+    title: "Past Life Regression",
+    subtitle: "10 sections",
+    image: require("../assets/background1.jpg"),
+    logo: require("../assets/logo-meditate.png"),
+    author: "Akvil Sakha",
+    avatar: require("../assets/avatar.jpg"),
+    caption: "Know how your present is shaped by who you were in the past"
+  },
+  {
+    title: "Astral Projection",
+    subtitle: "10 sections",
+    image: require("../assets/background2.jpg"),
+    logo: require("../assets/logo-meditate.png"),
+    author: "Akvil Sakha",
+    avatar: require("../assets/avatar.jpg"),
+    caption: "Enter the spiritual realm and Bon voyage"
+  }
+];
