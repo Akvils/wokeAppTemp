@@ -55,7 +55,7 @@ CoursesStack.navigationOptions = {
   tabBarLabel: "Courses",
   tabBarIcon: ({ focused }) => (
     <Icon.Ionicons
-      name="ios-albums"
+      name="ios-bookmarks"
       size={26}
       color={focused ? activeColor : inactiveColor}
     />
@@ -73,7 +73,7 @@ ProjectsStack.navigationOptions = {
   tabBarLabel: "Projects",
   tabBarIcon: ({ focused }) => (
     <Icon.Ionicons
-      name="ios-bookmarks"
+      name="ios-albums"
       size={26}
       color={focused ? activeColor : inactiveColor}
     />

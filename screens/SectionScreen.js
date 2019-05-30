@@ -85,65 +85,53 @@ const Text = styled.Text`
   color: #b8bece;
   font-weight: 500;
 `;
-const htmlContent = `
-  <h2>This is a title</h2>
-  <p>This <strong>is</strong> a <a href="#">link</a></p>
-  <img src="https://cl.ly/c0b07504bfec/download/background4.jpg" />
-`;
 
-const htmlStyles = `
+// const htmlContent = `
+//   <h2>This is a title</h2>
+//   <p>This <strong>is</strong> a <a href="#">link</a></p>
+//   <img src="https://cl.ly/c0b07504bfec/download/background4.jpg" />
+// `;
 
-    * {
-      font-family: -apple-system, Roboto;
-      margin: 0;
-      padding: 0;
-      font-size: 17px;
-      font-weight: normal;
-      color: #3c4560;
-      line-height: 24px;
-    }
+// const htmlStyles = `
 
-    h2 {
-      font-size: 20px;
-      text-transform: uppercase;
-      color: #b8bece;
-      font-weight: 600;
-      margin-top: 50px;
-    }
-  
-    p {
-      margin-top: 20px;
-    }
-  
-    a {
-      color: #4775f2;
-      font-weight: 600;
-      text-decoration: none;
-    }
-  
-    strong {
-      font-weight: 700;
-    }
+//     * {
+//       font-family: -apple-system, Roboto;
+//       margin: 0;
+//       padding: 0;
+//       font-size: 17px;
+//       font-weight: normal;
+//       color: #3c4560;
+//       line-height: 24px;
+//     }
 
-    img {
-      width: 100%;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
+//     h2 {
+//       font-size: 20px;
+//       text-transform: uppercase;
+//       color: #b8bece;
+//       font-weight: 600;
+//       margin-top: 50px;
+//     }
 
-    pre {
-      padding: 20px;
-      background: #212C4F;
-      overflow: hidden;
-      word-wrap: break-word;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-    
-    code {
-      color: white;
-    }
-`;
+//     p {
+//       margin-top: 20px;
+//     }
+
+//     a {
+//       color: #4775f2;
+//       font-weight: 600;
+//       text-decoration: none;
+//     }
+
+//     strong {
+//       font-weight: 700;
+//     }
+
+//     img {
+//       width: 100%;
+//       border-radius: 10px;
+//       margin-top: 20px;
+//     }
+// `;
 
 const Content = styled.View`
   height: 1000px;

@@ -5,7 +5,8 @@ import {
   TouchableOpacity,
   Animated,
   Easing,
-  StatusBar
+  StatusBar,
+  Platform
 } from "react-native";
 import styled from "styled-components";
 import Card from "../components/Card";
@@ -42,6 +43,8 @@ class HomeScreen extends React.Component {
 
   componentDidMount() {
     StatusBar.setBarStyle("dark-content", true);
+
+    if (Platform.OS == "android") StatusBar.setBarStyle("light-content", true);
   }
 
   componentDidUpdate() {
@@ -112,7 +115,7 @@ class HomeScreen extends React.Component {
                   <Logo key={index} image={logo.image} text={logo.text} />
                 ))}
               </ScrollView>
-              <Subtitle>Continue Learning</Subtitle>
+              <Subtitle>{"Continue Learning".toUpperCase()}</Subtitle>
               <ScrollView
                 horizontal={true}
                 style={{ paddingBottom: 30 }}
@@ -137,19 +140,21 @@ class HomeScreen extends React.Component {
                   </TouchableOpacity>
                 ))}
               </ScrollView>
-              <Subtitle>Popular Series</Subtitle>
-              {courses.map((course, index) => (
-                <Course
-                  key={index}
-                  title={course.title}
-                  image={course.image}
-                  subtitle={course.subtitle}
-                  logo={course.logo}
-                  author={course.author}
-                  avatar={course.avatar}
-                  caption={course.caption}
-                />
-              ))}
+              <Subtitle>{"Popular Series".toUpperCase()}</Subtitle>
+              <CoursesContainer>
+                {courses.map((course, index) => (
+                  <Course
+                    key={index}
+                    title={course.title}
+                    image={course.image}
+                    subtitle={course.subtitle}
+                    logo={course.logo}
+                    author={course.author}
+                    avatar={course.avatar}
+                    caption={course.caption}
+                  />
+                ))}
+              </CoursesContainer>
             </ScrollView>
           </SafeAreaView>
         </AnimatedContainer>
@@ -164,6 +169,12 @@ export default connect(
 )(HomeScreen);
 
 //styled components
+
+const CoursesContainer = styled.View`
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 10px;
+`;
 
 const RootView = styled.View`
   background: black;
