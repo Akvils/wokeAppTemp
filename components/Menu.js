@@ -66,7 +66,7 @@ class Menu extends React.Component {
           }}
         >
           <CloseView>
-            <Icon.Ionicons name="ios-close" size={44} color="#8B77BA" />
+            <Icon.Ionicons name="ios-close" size={44} color="#241824" />
           </CloseView>
         </TouchableOpacity>
         <Content>
