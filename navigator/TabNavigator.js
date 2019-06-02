@@ -36,8 +36,8 @@ HomeStack.navigationOptions = ({ navigation }) => {
     tabBarLabel: "Home",
     tabBarIcon: ({ focused }) => (
       <Icon.Ionicons
-        name="md-home"
-        size={26}
+        name="ios-planet"
+        size={32}
         color={focused ? activeColor : inactiveColor}
       />
     ),
