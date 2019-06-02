@@ -35,8 +35,8 @@ const tabBarHeight = 83;
 
 class Project extends React.Component {
   state = {
-    cardWidth: new Animated.Value(315),
-    cardHeight: new Animated.Value(460),
+    cardWidth: new Animated.Value(350),
+    cardHeight: new Animated.Value(500),
     titleTop: new Animated.Value(20),
     opacity: new Animated.Value(0),
     textHeight: new Animated.Value(100)
@@ -58,9 +58,9 @@ class Project extends React.Component {
   };
 
   closeCard = () => {
-    Animated.spring(this.state.cardWidth, { toValue: 315 }).start();
+    Animated.spring(this.state.cardWidth, { toValue: 350 }).start();
     Animated.spring(this.state.cardHeight, {
-      toValue: 460
+      toValue: 500
     }).start();
     Animated.spring(this.state.titleTop, { toValue: 20 }).start();
     Animated.timing(this.state.opacity, { toValue: 0 }).start();
@@ -74,7 +74,11 @@ class Project extends React.Component {
     return (
       <TouchableWithoutFeedback onPress={this.openCard}>
         <AnimatedContainer
-          style={{ width: this.state.cardWidth, height: this.state.cardHeight }}
+          style={{
+            width: this.state.cardWidth,
+            height: this.state.cardHeight,
+            elevation: 10
+          }}
         >
           <Cover>
             <Image source={this.props.image} />
@@ -128,8 +132,8 @@ const CloseView = styled.View`
 const AnimatedCloseView = Animated.createAnimatedComponent(CloseView);
 
 const Container = styled.View`
-  width: 315px;
-  height: 460px;
+  width: 350px;
+  height: 500px;
   border-radius: 14px;
   background-color: white;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
@@ -138,7 +142,7 @@ const Container = styled.View`
 const AnimatedContainer = Animated.createAnimatedComponent(Container);
 
 const Cover = styled.View`
-  height: 290px;
+  height: 315px;
   border-top-left-radius: 14px;
   border-top-right-radius: 14px;
   overflow: hidden;
@@ -146,7 +150,7 @@ const Cover = styled.View`
 
 const Image = styled.Image`
   width: 100%;
-  height: 290px;
+  height: 315px;
 `;
 
 const Title = styled.Text`

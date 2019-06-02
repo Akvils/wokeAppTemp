@@ -149,7 +149,7 @@ class HomeScreen extends React.Component {
                     image={course.image}
                     subtitle={course.subtitle}
                     logo={course.logo}
-                    author={course.author}
+                    topic={course.topic}
                     avatar={course.avatar}
                     caption={course.caption}
                   />
@@ -182,7 +182,7 @@ const RootView = styled.View`
 `;
 
 const Subtitle = styled.Text`
-  color: #b8bece;
+  color: #7c8495;
   font-weight: 600;
   font-size: 15px;
   margin-left: 20px;
@@ -212,7 +212,7 @@ const AnimatedContainer = Animated.createAnimatedComponent(Container);
 
 const Title = styled.Text`
   font-size: 16px;
-  color: #b8bece;
+  color: #7c8495;
   font-weight: 500;
 `;
 
@@ -289,11 +289,11 @@ const cards = [
 
 const courses = [
   {
-    title: "Vastu",
-    subtitle: "10 sections",
+    title: "Vastu Foundations",
+    subtitle: "12 sections",
     image: require("../assets/background11.jpg"),
     logo: require("../assets/logo-meditate.png"),
-    author: "Akvil Sakha",
+    topic: "Energy",
     avatar: require("../assets/avatar.jpg"),
     caption: "Programming the subconscious by designing the space"
   },
@@ -302,7 +302,7 @@ const courses = [
     subtitle: "10 sections",
     image: require("../assets/background12.jpg"),
     logo: require("../assets/logo-meditate.png"),
-    author: "Akvil Sakha",
+    topic: "Energy",
     avatar: require("../assets/avatar.jpg"),
     caption: "Holistic healing by the divine energy of existence"
   },
@@ -311,7 +311,7 @@ const courses = [
     subtitle: "10 sections",
     image: require("../assets/background1.jpg"),
     logo: require("../assets/logo-meditate.png"),
-    author: "Akvil Sakha",
+    topic: "Spirituality",
     avatar: require("../assets/avatar.jpg"),
     caption: "Know how your present is shaped by who you were in the past"
   },
@@ -320,7 +320,7 @@ const courses = [
     subtitle: "10 sections",
     image: require("../assets/background2.jpg"),
     logo: require("../assets/logo-meditate.png"),
-    author: "Akvil Sakha",
+    topic: "Spirituality",
     avatar: require("../assets/avatar.jpg"),
     caption: "Enter the spiritual realm and Bon voyage"
   }

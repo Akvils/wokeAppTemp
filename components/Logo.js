@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Logo = props => (
-  <Container>
+  <Container style={{ elevation: 5 }}>
     <Image source={props.image} resizeMode="contain" />
     <Text>{props.text}</Text>
   </Container>
@@ -18,7 +18,7 @@ const Container = styled.View`
   border-radius: 10px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
   justify-content: center;
-  margin: 0 8px;
+  margin: 10px 8px;
 `;
 
 const Image = styled.Image`
