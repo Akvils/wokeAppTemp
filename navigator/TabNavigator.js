@@ -7,7 +7,7 @@ import HomeScreen from "../screens/HomeScreen";
 import SectionScreen from "../screens/SectionScreen";
 import { Icon } from "expo";
 import CoursesScreen from "../screens/CoursesScreen";
-import ProjectsScreen from "../screens/ProjectsScreen";
+import ProcessScreen from "../screens/ProcessScreen";
 import VideoScreen from "../screens/VideoScreen";
 import JournalsScreen from "../screens/JournalsScreen";
 import ChatScreen from "../screens/ChatScreen";
@@ -41,7 +41,7 @@ HomeStack.navigationOptions = ({ navigation }) => {
     tabBarIcon: ({ focused }) => (
       <Icon.Ionicons
         name="ios-planet"
-        size={30}
+        size={32}
         color={focused ? activeColor : inactiveColor}
       />
     ),
@@ -69,12 +69,12 @@ CoursesStack.navigationOptions = {
   }
 };
 
-const ProjectsStack = createStackNavigator({
-  Projects: ProjectsScreen
+const ProcessStack = createStackNavigator({
+  Process: ProcessScreen
 });
 
-ProjectsStack.navigationOptions = {
-  tabBarLabel: "Projects",
+ProcessStack.navigationOptions = {
+  tabBarLabel: "Process",
   tabBarIcon: ({ focused }) => (
     <Icon.Ionicons
       name="ios-albums"
@@ -113,7 +113,7 @@ ChatStack.navigationOptions = {
   tabBarLabel: "Chat",
   tabBarIcon: ({ focused }) => (
     <Icon.Ionicons
-      name="ios-chatboxes"
+      name="ios-chatbubbles"
       size={26}
       color={focused ? activeColor : inactiveColor}
     />
@@ -126,7 +126,7 @@ ChatStack.navigationOptions = {
 const TabNavigator = createBottomTabNavigator({
   HomeStack,
   CoursesStack,
-  ProjectsStack,
+  ProcessStack,
   JournalsStack,
   ChatStack
 });

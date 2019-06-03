@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Project from "../components/Project";
+import Process from "../components/Process";
 import { PanResponder, Animated } from "react-native";
 import { connect } from "react-redux";
 
@@ -12,13 +12,13 @@ function mapStateToProps(state) {
 
 function getNextIndex(index) {
   var nextIndex = index + 1;
-  if (nextIndex > projects.length - 1) {
+  if (nextIndex > process.length - 1) {
     return 0;
   }
   return nextIndex;
 }
 
-class ProjectsScreen extends React.Component {
+class ProcessScreen extends React.Component {
   static navigationOptions = {
     // title: "Section",
     header: null
@@ -108,11 +108,11 @@ class ProjectsScreen extends React.Component {
           }}
           {...this._panResponder.panHandlers}
         >
-          <Project
-            title={projects[this.state.index].title}
-            image={projects[this.state.index].image}
-            author={projects[this.state.index].author}
-            text={projects[this.state.index].text}
+          <Process
+            title={process[this.state.index].title}
+            image={process[this.state.index].image}
+            author={process[this.state.index].author}
+            text={process[this.state.index].text}
             canOpen={true}
           />
         </Animated.View>
@@ -132,11 +132,11 @@ class ProjectsScreen extends React.Component {
             ]
           }}
         >
-          <Project
-            title={projects[getNextIndex(this.state.index)].title}
-            image={projects[getNextIndex(this.state.index)].image}
-            author={projects[getNextIndex(this.state.index)].author}
-            text={projects[getNextIndex(this.state.index)].text}
+          <Process
+            title={process[getNextIndex(this.state.index)].title}
+            image={process[getNextIndex(this.state.index)].image}
+            author={process[getNextIndex(this.state.index)].author}
+            text={process[getNextIndex(this.state.index)].text}
           />
         </Animated.View>
         <Animated.View
@@ -155,11 +155,11 @@ class ProjectsScreen extends React.Component {
             ]
           }}
         >
-          <Project
-            title={projects[getNextIndex(this.state.index + 1)].title}
-            image={projects[getNextIndex(this.state.index + 1)].image}
-            author={projects[getNextIndex(this.state.index + 1)].author}
-            text={projects[getNextIndex(this.state.index + 1)].text}
+          <Process
+            title={process[getNextIndex(this.state.index + 1)].title}
+            image={process[getNextIndex(this.state.index + 1)].image}
+            author={process[getNextIndex(this.state.index + 1)].author}
+            text={process[getNextIndex(this.state.index + 1)].text}
           />
         </Animated.View>
       </Container>
@@ -167,7 +167,7 @@ class ProjectsScreen extends React.Component {
   }
 }
 
-export default connect(mapStateToProps)(ProjectsScreen);
+export default connect(mapStateToProps)(ProcessScreen);
 
 const Title = styled.Text`
   position: absolute;
@@ -203,7 +203,7 @@ const Container = styled.View`
 const Text = styled.Text``;
 
 //Data
-const projects = [
+const process = [
   {
     title: "Catharsis",
     image: require("../assets/background5.jpg"),

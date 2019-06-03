@@ -33,7 +33,7 @@ const screenWidth = Dimensions.get("window").width;
 const screenHeight = Dimensions.get("window").height;
 const tabBarHeight = 83;
 
-class Project extends React.Component {
+class Process extends React.Component {
   state = {
     cardWidth: new Animated.Value(350),
     cardHeight: new Animated.Value(500),
@@ -47,7 +47,7 @@ class Project extends React.Component {
 
     Animated.spring(this.state.cardWidth, { toValue: screenWidth }).start();
     Animated.spring(this.state.cardHeight, {
-      toValue: screenHeight - tabBarHeight
+      toValue: screenHeight - tabBarHeight + 35
     }).start();
     Animated.spring(this.state.titleTop, { toValue: 40 }).start();
     Animated.timing(this.state.opacity, { toValue: 1 }).start();
@@ -116,7 +116,7 @@ class Project extends React.Component {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Project);
+)(Process);
 
 const AnimatedLinearGradient = Animated.createAnimatedComponent(LinearGradient);
 
