@@ -97,6 +97,7 @@ class ProjectsScreen extends React.Component {
   render() {
     return (
       <Container>
+        <Title>Processes</Title>
         <AnimatedMask style={{ opacity: this.state.opacity }} />
         <Animated.View
           style={{
@@ -167,6 +168,18 @@ class ProjectsScreen extends React.Component {
 }
 
 export default connect(mapStateToProps)(ProjectsScreen);
+
+const Title = styled.Text`
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 24px;
+  color: #241824;
+  font-weight: 600;
+  margin-top: 50px;
+  margin-left: 20px;
+  width: 220px;
+`;
 
 const Mask = styled.View`
   position: absolute;
